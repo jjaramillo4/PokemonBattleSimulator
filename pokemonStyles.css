@@ -1,0 +1,119 @@
+/* Retro Game Font & Background Setup */
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f8f8;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  
+  /* Creates a 2-column layout for Your Pokémon (left) and Wild Pokémon (right) */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: end; /* Aligns items to the bottom by default */
+  min-height: 100vh; /* Changed to 100vh to ensure the footer stays at the very bottom */
+}
+
+/* --- NEW HEADING STYLES --- */
+h1 {
+  grid-column: 1 / span 2; /* Forces title to span across both columns */
+  grid-row: 1;             /* Locks it to the very top row */
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+/* Wild Pokémon (Right Side & Slightly Higher) */
+div:nth-of-type(1) { 
+  grid-column: 2;
+  grid-row: 2; /* Shifted from 1 to 2 */
+  justify-self: end;
+  padding-right: 10%;
+  margin-bottom: 60px; 
+}
+
+/* Your Pokémon (Left Side) */
+div:nth-of-type(2) { 
+  grid-column: 1;
+  grid-row: 3; /* Shifted from 2 to 3 */
+  justify-self: start;
+  padding-left: 10%;
+}
+
+/* --- UPDATED BUTTON LAYOUTS (Shifted down by 1 row) --- */
+
+/* Wild Pokémon Button */
+button:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 4; /* Shifted from 3 to 4 */
+  justify-self: end;
+  margin-right: 10%;
+  float: none !important; 
+  background: linear-gradient(90deg, #5c9e31 25%, #4d8529 25%, #4d8529 50%, #5c9e31 50%, #5c9e31 75%, #3e6b20 75%);
+  background-size: 20px 100%;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000;
+}
+
+/* Your Pokémon Button */
+button:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 4; /* Shifted from 3 to 4 */
+  justify-self: start;
+  margin-left: 10%;
+  background: linear-gradient(to bottom, #ff1c1c 50%, #ffffff 50%);
+  color: #000;
+  text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff; 
+  border-radius: 8px;
+}
+
+/* Base Button Styles */
+button {
+  cursor: pointer;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0px #888;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px;
+  background-color: #fff;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #888;
+}
+
+/* --- TEXT & SPRITE FINE TUNING --- */
+
+span {
+  display: block;
+  background: #d6c5b3;
+  border: 3px solid #000;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 0px #ccc;
+}
+
+img {
+  image-rendering: pixelated; 
+  width: 150px;
+  height: auto;
+}
+
+/* --- NEW TRADEMARK FOOTER STYLES --- */
+footer {
+  grid-column: 1 / span 2; /* Spans across both columns */
+  grid-row: 5;             /* Locks it below the buttons */
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+  padding-top: 30px;
+  justify-self: center;
+  text-transform: uppercase;
+}
